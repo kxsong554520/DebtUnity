@@ -102,7 +102,7 @@
 
 <div class="cal" ng-app="calApp" ng-controller="calCtrl">
   
-  <div class="cal-heading">Upcoming Programs</div>
+  <div class="cal-heading" style = "color:#bbb">Upcoming Programs</div>
   <div class="cal-event" ng-repeat="event in getEvents() ">
     <div class="cal-event-tile">
       <div class="cal-event-tile-date">{{ event.date | date:'d' }}</div>
