@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://kit.fontawesome.com/57d52e4250.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, sans-serif;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 2.5s; /* Change slide transition duration */
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="mentor.html">Mentors</a></li>
+            <li><a href="forum.html">Forum</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="login-register">
+            <button><a href = "login.html" style = "color:black">Login</a></button>
+            <button><a href = "register.html" style = "color:black">Register</a></button>
+        </div>
+    </nav>
+
+<div class="cal" ng-app="calApp" ng-controller="calCtrl">
+  
+  <div class="cal-heading">Upcoming Programs</div>
+  <div class="cal-event" ng-repeat="event in getEvents() ">
+    <div class="cal-event-tile">
+      <div class="cal-event-tile-date">{{ event.date | date:'d' }}</div>
+      <div class="cal-event-tile-month">{{ event.date | date:'MMM' }}</div>
+    </div>
+    <div class="cal-event-desc">
+      <div class="cal-event-title">
+        {{ event.title }} 
+      </div>
+      <div class="cal-event-time">
+        <icon>&#xf017;</icon> {{ event.date | date:'h:mm a, EEE d MMM' }}
+      </div>
+      <div class="cal-event-location">
+        <icon>&#xf041;</icon>
+        <div class="cal-event-location-content">
+          {{event.location}}  
+         </div>
+      </div>
+      <a class="cal-event-map" href="{{getMap(event)}}" target="_blank"> View Map</a>
+    </div> 
+  </div>
+  
+  <div class="cal-hidden-events" ng-click="showHidden()" ng-if="hiddenEvents() > 0">
+    {{ hiddenEvents()}} Event<span ng-if="hiddenEvents() >1">s</span> Hidden
+  </div>
+  <div ng-if="hiddenEvents() == 0 && events.length > 3" class="cal-hidden-events" ng-click="hideEvents()">
+    Hide Events
+  </div>
+</div>
+
+<div class="footer">
+    <p>COPYRIGHT &copy; DebtUnity
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter-square"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a>
+    </p>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
+<script src="program.js"></script>
+</body>
+</html>

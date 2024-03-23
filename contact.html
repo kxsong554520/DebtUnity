@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Verdana, sans-serif;
+    }
+
+    .mySlides {
+        display: none;
+    }
+
+    img {
+        vertical-align: middle;
+    }
+
+    .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+    }
+
+    .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .active {
+        background-color: #717171;
+    }
+
+    .fade {
+        animation-name: fade;
+        animation-duration: 2.5s;
+        /* Change slide transition duration */
+    }
+
+    @keyframes fade {
+        from {
+            opacity: 0.4;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @media only screen and (max-width: 300px) {
+        .text {
+            font-size: 11px;
+        }
+    }
+
+    input[type=text],
+    select,
+    textarea {
+        width: 100%;
+        /* Full width */
+        padding: 12px;
+        /* Some padding */
+        border: 1px solid #ccc;
+        /* Gray border */
+        border-radius: 4px;
+        /* Rounded borders */
+        box-sizing: border-box;
+        /* Make sure that padding and width stays in place */
+        margin-top: 6px;
+        /* Add a top margin */
+        margin-bottom: 16px;
+        /* Bottom margin */
+        resize: vertical
+            /* Allow the user to vertically resize the textarea (not horizontally) */
+    }
+
+    /* Style the submit button with a specific background color etc */
+    input[type=submit] {
+        background-color: #04AA6D;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    /* When moving the mouse over the submit button, add a darker green color */
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+    /* Add a background color and some padding around the form */
+    .containers {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin-top: 20px;
+        margin-left: 60px;
+        margin-right: 60px;
+        margin-bottom: 60px;
+    }
+
+    label {
+        margin-top: 10px;
+        display: block;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="mentor.html">Mentors</a></li>
+            <li><a href="forum.html">Forum</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="login-register">
+            <button><a href = "login.html" style = "color:black">Login</a></button>
+            <button><a href = "register.html" style = "color:black">Register</a></button>
+        </div>
+    </nav>
+
+    <h2 class="mentor-title">Contact Us</h1>
+
+
+        <div class="containers">
+            <form action="action_page.php">
+
+                <label for="fname">To: DebtUnity2024@gmail.com</label>
+                <br>
+                <label for="email">From:</label>
+                <input type="text" id="email" name="email" placeholder="Your e-mail address">
+
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name..">
+
+                <label for="state">State:</label>
+                <select id="state" name="state">
+                    <option value="Johor">Johor</option>
+                    <option value="Kedah">Kedah</option>
+                    <option value="Kelantan">Kelantan</option>
+                    <option value="Melaka">Melaka</option>
+                    <option value="Negeri Sembilan">Negeri Sembilan</option>
+                    <option value="Pahang">Pahang</option>
+                    <option value="Perak">Perak</option>
+                    <option value="Perlis">Perlis</option>
+                    <option value="Penang">Penang</option>
+                    <option value="Sabah">Sabah</option>
+                    <option value="Sarawak">Sarawak</option>
+                    <option value="Selangor">Selangor</option>
+                    <option value="Terengganu">Terengganu</option>
+                    <option value="Kuala Lumpur">Kuala Lumpur</option>
+                    <option value="Labuan">Labuan</option>
+                    <option value="Putrajaya">Putrajaya</option>
+                </select>
+
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+                <input type="submit" value="Submit">
+
+            </form>
+        </div>
+
+        <div class="footer">
+            <p>COPYRIGHT &copy; DebtUnity
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a>
+            </p>
+        </div>
+
+</body>
+
+</html>

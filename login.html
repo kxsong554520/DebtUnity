@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script src="https://kit.fontawesome.com/57d52e4250.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-text" style="color:black;">Login</div>
+        <form id="loginForm" action="#" method="post">
+            <input type="text" name="username" id="username" placeholder="Username" required>
+            <br>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>COPYRIGHT &copy; DebtUnity
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter-square"></i></a>
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a>
+        </p>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            console.log("Form submitted"); 
+
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            console.log("Username:", username); 
+            console.log("Password:", password); 
+
+            // Check if username and password are correct
+            if (username === "admin" && password === "12345") {
+                alert("You have successfully logged in");
+                window.location.href = "index.html"; 
+            } else {
+                alert("Incorrect username or password. Please try again.");
+                // Clear the input fields
+                document.getElementById("username").value = "";
+                document.getElementById("password").value = "";
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+

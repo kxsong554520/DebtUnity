@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://kit.fontawesome.com/57d52e4250.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, sans-serif;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 2.5s; /* Change slide transition duration */
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="mentor.html">Mentors</a></li>
+        <li><a href="forum.html">Forum</a></li>
+        <li><a href="location.html">Location</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="login-register">
+        <button><a href = "login.html" style = "color:black">Login</a></button>
+        <button><a href = "register.html" style = "color:black">Register</a></button>
+    </div>
+</nav>
+
+<div class="slideshow-container">
+    <div class="mySlides fade">
+        <div class="numbertext">1/4</div>
+        <img src="img/debtRelief.jpeg" style="width:100%; height:600px">
+        <div class="text">
+            <h3 style="color:black">Welcome to DebtUnity!</h3>
+        </div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">2/4</div>
+        <img src="img/debt.jpeg" style="width:100%; height:600px">
+        <div class="text">
+            <h3 style="color:black">According to Bank Negara Malaysia, Malaysia's household debt is one of the highest in SEA region with 89% Household Debt-to-GDP Ratio</h3>
+        </div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">3/4</div>
+        <img src="img/helping.jpeg" style="width:100%; height:600px;">
+        <div class="text">
+            <h3 style="color:black">If you're currently in debt, don't worry! We will try our best to help you.</h3>
+        </div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">4/4</div>
+        <img src="img/groupHelp.jpeg" style="width:100%; height:600px">
+        <div class="text">
+            <h3 style="color:black">We have an excellent community here that are willing to help out fellow Malaysians who are in debt.</h3>
+        </div>
+    </div>
+</div>
+
+<div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div>
+
+<div class="footer">
+    <p>COPYRIGHT &copy; DebtUnity
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter-square"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a>
+    </p>
+</div>
+
+<script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 3500); 
+    }
+</script>
+</body>
+</html>
