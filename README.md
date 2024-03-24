@@ -20,4 +20,4 @@ This is a project that was created for VHack USM Hackathon 2024 (Case Study 1). 
 https://kxsong554520.github.io/DebtUnity/
 
 ## Note
-The placeholder username and password is "admin" and "12345" respectively
+The placeholder username and password in the login page are "admin" and "12345" respectively
